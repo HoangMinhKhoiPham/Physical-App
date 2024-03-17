@@ -145,7 +145,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     paddingHorizontal: SIZES.medium,
-    paddingVertical: SIZES.medium,
   },
 });
 

@@ -25,7 +25,6 @@ const styles = (isPrimary: boolean) =>
       alignItems: "center",
       height: "100%",
       width: "100%",
-      paddingVertical: SIZES.medium,
       paddingHorizontal: SIZES.xLarge,
       backgroundColor: isPrimary ? COLORS.primary : COLORS.secondary,
       borderRadius: SIZES.medium,
