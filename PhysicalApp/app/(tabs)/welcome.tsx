@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Image, Dimensions, Pressable } from "react-native";
 import { Text, View } from "@/components/Themed";
 import {COLORS, FONT, SIZES} from "../../constants";
+import {useNavigation} from "expo-router";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        paddingHorizontal: 20, // Add some horizontal padding
+        paddingHorizontal: 20,
     },
     appName: {
         fontSize: SIZES.xLarge,
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
         width: windowWidth,
         height: windowHeight / 1.5,
         resizeMode: "cover",
-        marginBottom: 20, // Add some margin at the bottom
+        marginBottom: 20,
     },
     button: {
         backgroundColor: COLORS.primary,
