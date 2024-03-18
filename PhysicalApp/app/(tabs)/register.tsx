@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
 import { FONT, SIZES } from "../../constants";
+import {RegisterForm} from "@/components/RegisterForm";
 
 export default function registerScreen() {
   return (
@@ -22,6 +23,7 @@ export default function registerScreen() {
           width: "80%",
         }}
       />
+    <RegisterForm/>
     </View>
   );
 }
