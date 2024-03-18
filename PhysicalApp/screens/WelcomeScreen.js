@@ -4,7 +4,7 @@ import {LinearGradient} from 'expo-linear-gradient'
 export default function WelcomeScreen() {
     return (
         <View className="flex-1 flex justify-end">
-                <Image className="h-full w-full absolute" source={require('../assets/HomePageImage.png')}/>
+                <Image className="h-full w-full absolute" source={require('../assets/images/HomePageImage.png')}/>
             <LinearGradient
                 colors={['transparent', '#18181b']}
                 style={{width: wp(100), height: hp(70)}}

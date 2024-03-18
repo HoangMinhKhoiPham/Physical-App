@@ -6,6 +6,7 @@ import { Pressable } from "react-native";
 import Colors from "@/constants/Colors";
 import { useColorScheme } from "@/components/useColorScheme";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
+import welcomeScreen from "@/app/(tabs)/welcome";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -27,6 +28,14 @@ export default function TabLayout() {
         headerShown: useClientOnlyValue(false, true),
       }}
     >
+        <Tabs.Screen
+            name="welcome"
+            options={{
+                title: "Welcome",
+                tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color}>
+                </TabBarIcon>,
+            }}
+        />
       <Tabs.Screen
         name="index"
         options={{
