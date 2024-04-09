@@ -2,7 +2,7 @@ import { Text, View } from "@/components/Themed";
 import LogInForm from "@/components/LogInForm";
 import { FONT, SIZES } from "../../constants";
 
-export default function Dashboard() {
+export default function Explore() {
     return (
         <View
             style={{

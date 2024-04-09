@@ -29,10 +29,120 @@ export default function TabLayout() {
         >
 
             <Tabs.Screen
-                name="Dashboard"
+                name="Home"
                 options={{
-                    title: "Dashboard",
-                    tabBarIcon: ({ color }) => <TabBarIcon name="lock" color={color} />,
+                    title: "Home",
+                    tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+                    headerRight: () => (
+                        <Link href="/modal" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <FontAwesome
+                                        name="info-circle"
+                                        size={25}
+                                        color={Colors[colorScheme ?? "light"].text}
+                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
+                    ),
+                }}
+            />
+
+            <Tabs.Screen
+                name="Explore"
+                options={{
+                    title: "Explore",
+                    tabBarIcon: ({ color }) => <TabBarIcon name="globe" color={color} />,
+                    headerRight: () => (
+                        <Link href="/modal" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <FontAwesome
+                                        name="info-circle"
+                                        size={25}
+                                        color={Colors[colorScheme ?? "light"].text}
+                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
+                    ),
+                }}
+            />
+
+            <Tabs.Screen
+                name="MyExercises"
+                options={{
+                    title: "MyExercises",
+                    tabBarIcon: ({ color }) => <TabBarIcon name="bicycle" color={color} />,
+                    headerRight: () => (
+                        <Link href="/modal" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <FontAwesome
+                                        name="info-circle"
+                                        size={25}
+                                        color={Colors[colorScheme ?? "light"].text}
+                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
+                    ),
+                }}
+            />
+
+            <Tabs.Screen
+                name="Rewards"
+                options={{
+                    title: "Rewards",
+                    tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
+                    headerRight: () => (
+                        <Link href="/modal" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <FontAwesome
+                                        name="info-circle"
+                                        size={25}
+                                        color={Colors[colorScheme ?? "light"].text}
+                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
+                    ),
+                }}
+            />
+
+            <Tabs.Screen
+                name="Forum"
+                options={{
+                    title: "Forum",
+                    tabBarIcon: ({ color }) => <TabBarIcon name="comments" color={color} />,
+                    headerRight: () => (
+                        <Link href="/modal" asChild>
+                            <Pressable>
+                                {({ pressed }) => (
+                                    <FontAwesome
+                                        name="info-circle"
+                                        size={25}
+                                        color={Colors[colorScheme ?? "light"].text}
+                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    />
+                                )}
+                            </Pressable>
+                        </Link>
+                    ),
+                }}
+            />
+
+            <Tabs.Screen
+                name="Profile"
+                options={{
+                    title: "Profile",
+                    tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
                     headerRight: () => (
                         <Link href="/modal" asChild>
                             <Pressable>
@@ -50,5 +160,7 @@ export default function TabLayout() {
                 }}
             />
         </Tabs>
+
+
     );
 }

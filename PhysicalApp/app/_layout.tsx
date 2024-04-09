@@ -59,13 +59,15 @@ function RootLayoutNav() {
       token = await AsyncStorage.getItem('userData')
     })()
   }, [])
+  console.log(token)
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         {token ? (
-                <Stack.Screen name="home(tabs)" options={{ headerShown: false }} />
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             ):
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="home(tabs)" options={{ headerShown: false }} />
+
         }
       </Stack>
     </ThemeProvider>
