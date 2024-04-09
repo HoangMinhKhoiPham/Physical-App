@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import { StyleSheet } from "react-native";
 import { Text, TextInput } from "react-native";
 import { View } from "@/components/Themed";
 import LogInBtn from "./LogInBtn";
 import { COLORS, FONT, SIZES } from "@/constants";
+import {createUserWithEmailAndPassword} from "@firebase/auth";
+import {auth} from "@/config/firebase";
 
 const LogInForm = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
   return (
     // Container -> Wrapper -> Input
     <View>

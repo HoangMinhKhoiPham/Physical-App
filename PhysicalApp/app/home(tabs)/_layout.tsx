@@ -29,9 +29,9 @@ export default function TabLayout() {
         >
 
             <Tabs.Screen
-                name="index"
+                name="Dashboard"
                 options={{
-                    title: "Log In",
+                    title: "Dashboard",
                     tabBarIcon: ({ color }) => <TabBarIcon name="lock" color={color} />,
                     headerRight: () => (
                         <Link href="/modal" asChild>
@@ -47,13 +47,6 @@ export default function TabLayout() {
                             </Pressable>
                         </Link>
                     ),
-                }}
-            />
-            <Tabs.Screen
-                name="register"
-                options={{
-                    title: "Register",
-                    tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
                 }}
             />
         </Tabs>
