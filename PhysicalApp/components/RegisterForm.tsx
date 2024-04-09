@@ -1,16 +1,53 @@
 import {View} from "@/components/Themed";
-import {GestureResponderEvent, StyleSheet, Text, TextInput, TouchableOpacity} from "react-native";
+import {
+    Alert,
+    GestureResponderEvent,
+    NativeSyntheticEvent,
+    StyleSheet,
+    Text,
+    TextInput, TextInputChangeEventData,
+    TouchableOpacity
+} from "react-native";
 import {COLORS, FONT, SIZES} from "@/constants";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import RegisterBtn from "@/components/RegisterBtn";
-
+import {createUserWithEmailAndPassword} from "@firebase/auth";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 interface RegisterFormProps {
     isChecked: boolean
 }
-
 export const RegisterForm = () => {
     const [isChecked, setIsChecked] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [values, setValues] = useState({})
+    const [fullName, setFullName] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [confirmedPassword, setConfirmedPassword] = useState('')
 
+
+    const onHandleSignUp = async () => {
+        if (email !== '' && password !== '') {
+            try {
+                await AsyncStorage.setItem('email', email);
+                await AsyncStorage.setItem('password', password);
+                await AsyncStorage.setItem('fullName', fullName);
+                await AsyncStorage.setItem('phoneNumber', phoneNumber);
+                await AsyncStorage.setItem('confirmedPassword', confirmedPassword);
+
+                const userData = {
+                    email,
+                    password,
+                    fullName,
+                    phoneNumber,
+                    confirmedPassword,
+                };
+                await AsyncStorage.setItem('userData', JSON.stringify(userData));
+            } catch (error) {
+                console.error('Error storing data:', error);
+            }
+        }
+    }
     const toggleCheckbox = () => {
         setIsChecked(!isChecked);
     };
@@ -62,8 +99,9 @@ export const RegisterForm = () => {
                 >
                     <TextInput
                         placeholder="Full Name"
-                        value=""
-                        onChange={() => {
+                        value={fullName}
+                        onChange={(fullName:NativeSyntheticEvent<TextInputChangeEventData>) => {
+                            setFullName(fullName.nativeEvent.text)
                         }}
                         style={styles.userInput}
                     />
@@ -83,8 +121,9 @@ export const RegisterForm = () => {
                 >
                     <TextInput
                         placeholder="Email"
-                        value=""
-                        onChange={() => {
+                        value={email}
+                        onChange={(email:NativeSyntheticEvent<TextInputChangeEventData>) => {
+                            setEmail(email.nativeEvent.text)
                         }}
                         style={styles.userInput}
                     />
@@ -102,29 +141,10 @@ export const RegisterForm = () => {
                     }}
                 >
                     <TextInput
-                        value="Password"
-                        onChange={() => {
-                        }}
-                        style={styles.userInput}
-                    />
-                </View>
-
-                <View
-                    style={{
-                        flex: 1,
-                        backgroundColor: COLORS.secondary,
-                        marginRight: SIZES.small,
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderRadius: SIZES.medium,
-                        height: "100%",
-                        width: "100%",
-                    }}
-                >
-                    <TextInput
-                        placeholder="Phone Number"
-                        value=""
-                        onChange={() => {
+                        placeholder="Password"
+                        value={password}
+                        onChange={(password:NativeSyntheticEvent<TextInputChangeEventData>) => {
+                            setPassword(password.nativeEvent.text)
                         }}
                         style={styles.userInput}
                     />
@@ -144,8 +164,31 @@ export const RegisterForm = () => {
                 >
                     <TextInput
                         placeholder="Confirm Password"
-                        value=""
-                        onChange={() => {
+                        value={confirmedPassword}
+                        onChange={(confirmedPassword:NativeSyntheticEvent<TextInputChangeEventData>) => {
+                            setConfirmedPassword(confirmedPassword.nativeEvent.text)
+                        }}
+                        style={styles.userInput}
+                    />
+                </View>
+
+                <View
+                    style={{
+                        flex: 1,
+                        backgroundColor: COLORS.secondary,
+                        marginRight: SIZES.small,
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: SIZES.medium,
+                        height: "100%",
+                        width: "100%",
+                    }}
+                >
+                    <TextInput
+                        placeholder="Phone Number"
+                        value={phoneNumber}
+                        onChange={(phoneNumber:NativeSyntheticEvent<TextInputChangeEventData>) => {
+                            setPhoneNumber(phoneNumber.nativeEvent.text)
                         }}
                         style={styles.userInput}
                     />
@@ -175,8 +218,7 @@ export const RegisterForm = () => {
                         width: "100%",
                     }}
                 >
-                    <RegisterBtn content="Create Account" handlePress={() => {
-                    }} isPrimary={true}/>
+                    <RegisterBtn content="Create Account" handlePress={onHandleSignUp} isPrimary={true}/>
                 </View>
             </View>
 
