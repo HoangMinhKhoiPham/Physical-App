@@ -14,6 +14,7 @@ export default function Profile() {
             style={{
                 flex: 1,
                 alignItems: "center",
+                paddingTop: 70,
             }}
         >
             <Image source={require('../../assets/images/Avatar.png')} style={{
@@ -24,13 +25,13 @@ export default function Profile() {
             }}
                 />
             <View style={styles.container}>
-                <Text style={{ fontSize: SIZES.xxxLarge, fontFamily: FONT.regular }}>
+                <Text style={{ fontSize: SIZES.xxLarge, fontFamily: FONT.bold }}>
                     Tom Cruise
                 </Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 5 , marginLeft: 10}}>
                     <View style={styles.rectangle}>
                         <FontAwesome name="bolt" size={30} color="#597EFF" style={{ marginRight: 5 }} />
-                        <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, color: '#597EFF'}}>
+                        <Text style={{ fontSize: SIZES.xLarge, fontFamily: FONT.regular, color: '#597EFF'}}>
                             52
                         </Text>
                     </View>
@@ -41,13 +42,13 @@ export default function Profile() {
                 style={{
                     flex: 1,
                     position: 'absolute',
-                    marginTop: 150,
+                    marginTop: 250,
                     flexDirection: 'column', // Display children in columns
                     alignItems: 'flex-start', // Align children to the start of the container
                     marginLeft: 10, // Adjust left margin for better alignment
                 }}
             >
-                <Text style={{ fontSize: SIZES.xxLarge, fontFamily: FONT.regular, marginBottom: 10 }}>My Goals</Text>
+                <Text style={{ fontSize: SIZES.xxLarge, fontFamily: FONT.regular, marginBottom: 10, marginLeft: 15}}>My Goals</Text>
 
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.goalContainer}>
@@ -68,7 +69,7 @@ export default function Profile() {
                 </View>
 
                 <View style={styles.separator}></View>
-                <View style={{ flex: 1, position: 'absolute', marginTop: 200, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 10 }}>
+                <View style={{ flex: 1, position: 'absolute', marginTop: 280, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 15 }}>
                     <Text style={{ fontSize: SIZES.xxLarge, fontFamily: FONT.regular, marginBottom: 10 }}>My Metrics</Text>
                     <View style={styles.metricContainer}>
                         <View style={styles.metricRectangle}>
@@ -148,7 +149,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
-        margin: 5
+        margin: 5,
+        marginLeft: 15,
     },
     addButton: {
         width: 80,
@@ -156,9 +158,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#597EFF',
         borderRadius: 22,
         borderWidth: 2,
-        borderColor: '#FFFFFF',
+        borderColor: 'black',
+        borderStyle: "dashed",
         justifyContent: 'center',
         alignItems: 'center',
+        marginLeft: 15,
     },
     addButtonText: {
         fontSize: 16,
@@ -178,11 +182,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 10,
         flexDirection: 'row',
-
+        marginLeft: 15,
     },
     separator: {
-        height: 1,
+        height: 1.5,
         width: 280,
+        marginTop: 90,
         marginLeft: 50,
         backgroundColor: '#4D506F',
         marginVertical: 10,
