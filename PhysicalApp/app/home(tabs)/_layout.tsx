@@ -7,6 +7,7 @@ import Colors from "@/constants/Colors";
 import { useColorScheme } from "@/components/useColorScheme";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 import welcomeScreen from "@/app/(tabs)/welcome";
+import {COLORS} from "@/constants";
 
 function TabBarIcon(props: {
     name: React.ComponentProps<typeof FontAwesome>["name"];
@@ -32,7 +33,7 @@ export default function TabLayout() {
                 name="Home"
                 options={{
                     title: "Home",
-                    tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+                    tabBarIcon: ({ color }) => <TabBarIcon name="home" color={COLORS.text} />,
                     headerRight: () => (
                         <Link href="/modal" asChild>
                             <Pressable>
@@ -54,7 +55,7 @@ export default function TabLayout() {
                 name="Explore"
                 options={{
                     title: "Explore",
-                    tabBarIcon: ({ color }) => <TabBarIcon name="globe" color={color} />,
+                    tabBarIcon: ({ color }) => <TabBarIcon name="globe" color={COLORS.text} />,
                     headerRight: () => (
                         <Link href="/modal" asChild>
                             <Pressable>
@@ -76,7 +77,7 @@ export default function TabLayout() {
                 name="MyExercises"
                 options={{
                     title: "MyExercises",
-                    tabBarIcon: ({ color }) => <TabBarIcon name="bicycle" color={color} />,
+                    tabBarIcon: ({ color }) => <TabBarIcon name="bicycle" color={COLORS.text} />,
                     headerRight: () => (
                         <Link href="/modal" asChild>
                             <Pressable>
@@ -98,7 +99,7 @@ export default function TabLayout() {
                 name="Rewards"
                 options={{
                     title: "Rewards",
-                    tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
+                    tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={COLORS.text} />,
                     headerRight: () => (
                         <Link href="/modal" asChild>
                             <Pressable>
@@ -120,7 +121,7 @@ export default function TabLayout() {
                 name="Forum"
                 options={{
                     title: "Forum",
-                    tabBarIcon: ({ color }) => <TabBarIcon name="comments" color={color} />,
+                    tabBarIcon: ({ color }) => <TabBarIcon name="comments" color={COLORS.text} />,
                     headerRight: () => (
                         <Link href="/modal" asChild>
                             <Pressable>
@@ -142,7 +143,7 @@ export default function TabLayout() {
                 name="Profile"
                 options={{
                     title: "Profile",
-                    tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+                    tabBarIcon: ({ color }) => <TabBarIcon name="user" color={COLORS.text} />,
                     headerRight: () => (
                         <Link href="/modal" asChild>
                             <Pressable>

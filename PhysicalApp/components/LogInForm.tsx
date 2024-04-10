@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import { StyleSheet } from "react-native";
+import {NativeSyntheticEvent, StyleSheet, TextInputChangeEventData} from "react-native";
 import { Text, TextInput } from "react-native";
 import { View } from "@/components/Themed";
 import LogInBtn from "./LogInBtn";
 import { COLORS, FONT, SIZES } from "@/constants";
 import {createUserWithEmailAndPassword} from "@firebase/auth";
-import {auth} from "@/config/firebase";
+// import {auth} from "@/config/firebase";
 
 const LogInForm = () => {
     const [email, setEmail] = useState('');
@@ -59,8 +59,10 @@ const LogInForm = () => {
         >
           <TextInput
             placeholder="Email"
-            value=""
-            onChange={() => {}}
+            value={email}
+            onChange={(email:NativeSyntheticEvent<TextInputChangeEventData>) => {
+                setEmail(email.nativeEvent.text)
+            }}
             style={styles.userInput}
           />
         </View>
@@ -77,8 +79,11 @@ const LogInForm = () => {
           }}
         >
           <TextInput
-            value="Password"
-            onChange={() => {}}
+              placeholder="Password"
+              value={password}
+              onChange={(password:NativeSyntheticEvent<TextInputChangeEventData>) => {
+                  setPassword(password.nativeEvent.text)
+              }}
             style={styles.userInput}
           />
         </View>
