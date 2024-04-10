@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     checkmark: {
-        fontSize: 16,
+        fontSize: 14,
         color: COLORS.primary,
     },
     checkboxText: {
