@@ -17,7 +17,7 @@ const LogInForm = () => {
             <View style={{width: "100%"}}>
                 <Text
                     style={{
-                        fontFamily: FONT.regular,
+                        fontFamily: FONT.bold,
                         fontSize: SIZES.large,
                         color: COLORS.primary,
                     }}
@@ -41,7 +41,7 @@ const LogInForm = () => {
                     justifyContent: "space-between",
                     alignItems: "center",
                     flexDirection: "column",
-                    gap: SIZES.small,
+                    gap: SIZES.medium,
                     marginTop: SIZES.large,
                     height: 110,
                 }}
