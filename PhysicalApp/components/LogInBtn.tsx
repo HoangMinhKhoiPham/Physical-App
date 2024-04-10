@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../constants";
+import {white} from "colorette";
 
 export type BtnProps = {
   content: string;
@@ -11,7 +12,7 @@ export type BtnProps = {
 const LogInBtn: React.FC<BtnProps> = ({ content, handlePress, isPrimary }) => {
   return (
     <TouchableOpacity onPress={handlePress} style={styles(isPrimary).btn}>
-      <Text style={{ color: isPrimary ? COLORS.secondary : COLORS.black }}>
+      <Text style={{ color: isPrimary ? 'white' : COLORS.text }}>
         {content}
       </Text>
     </TouchableOpacity>

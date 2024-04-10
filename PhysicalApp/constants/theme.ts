@@ -1,7 +1,7 @@
 const COLORS = {
-  primary: "#687EFF",
-  secondary: "#F1F4FF",
-  tertiary: "#1F41BB",
+  primary: "#597EFF",
+  secondary: "#E4ECFF",
+  tertiary: "#4F6FDD",
 
   text: "#4D506F",
   black: "#000000",
@@ -20,6 +20,7 @@ const SIZES = {
   large: 20,
   xLarge: 24,
   xxLarge: 32,
+  xxxLarge: 40,
 };
 
 export { COLORS, FONT, SIZES };
