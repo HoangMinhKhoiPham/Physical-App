@@ -7,9 +7,12 @@ import ProgressBar from "@/components/PointBar";
 
 export default function Home() {
     return (
-        <View style={{
-            flex: 1,
-        }}>
+        <View
+            style={{
+                flex: 1,
+                paddingTop: 70,
+            }}
+        >
             <View
                 style={{
                     flex: 1,
@@ -20,7 +23,7 @@ export default function Home() {
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 50 , marginLeft: 10}}>
                         <View style={styles.rectangle}>
                             <FontAwesome name="bolt" size={30} color="#597EFF" style={{ marginRight: 5 }} />
-                            <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, color: '#597EFF'}}>
+                            <Text style={{ fontSize: SIZES.xLarge, fontFamily: FONT.regular, color: '#597EFF'}}>
                                 52
                             </Text>
                         </View>
@@ -28,40 +31,40 @@ export default function Home() {
                 </View>
                 <View style={styles.calendarContainer}>
                     <View style={styles.calendarRow}>
-                        <Text style={styles.dayText}>Mon</Text>
+                        <Text style={styles.dayText}>MON</Text>
                         <View style={styles.tickCircle}>
                             <FontAwesome name="check" size={10} color="#FFFFFF" />
                         </View>
                     </View>
                     <View style={styles.calendarRow}>
-                        <Text style={styles.dayText}>Tue</Text>
+                        <Text style={styles.dayText}>TUE</Text>
                         <View style={styles.tickCircle}>
                             <FontAwesome name="check" size={10} color="#FFFFFF" />
                         </View>
                     </View>
                     <View style={styles.calendarRow}>
-                        <Text style={styles.dayText}>Wed</Text>
+                        <Text style={styles.dayText}>WED</Text>
                         <View style={styles.tickCircle}>
                             <FontAwesome name="check" size={10} color="#FFFFFF" />
                         </View>
                     </View>
                     <View style={styles.calendarRow}>
-                        <Text style={styles.dayText}>Thu</Text>
+                        <Text style={styles.dayText}>THU</Text>
                         <View style={styles.undoneTickCircle}>
                         </View>
                     </View>
                     <View style={styles.calendarRow}>
-                        <Text style={styles.dayText}>Fri</Text>
+                        <Text style={styles.dayText}>FRI</Text>
                         <View style={styles.undoneTickCircle}>
                         </View>
                     </View>
                     <View style={styles.calendarRow}>
-                        <Text style={styles.dayText}>Sat</Text>
+                        <Text style={styles.dayText}>SAT</Text>
                         <View style={styles.undoneTickCircle}>
                         </View>
                     </View>
                     <View style={styles.calendarRow}>
-                        <Text style={styles.dayText}>Sun</Text>
+                        <Text style={styles.dayText}>SUN</Text>
                         <View style={styles.undoneTickCircle}>
                         </View>
                     </View>
@@ -71,20 +74,20 @@ export default function Home() {
                 style={{
                     flex: 1,
                     position: 'absolute',
-                    marginTop: 150,
+                    marginTop: 250,
                     flexDirection: 'column',
                     alignItems: 'flex-start',
                     marginLeft: 10,
                 }}
             >
-                <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10 }}>My Points</Text>
+                <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10, marginLeft: 15}}>My Points</Text>
                 <View style={styles.pointsContainer}>
                     <ProgressBar value={25000} />
                 </View>
 
                 <View style={styles.separator}></View>
-                <View style={{ flex: 1, position: 'absolute', marginTop: 200, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 10 }}>
-                    <Text style={{ fontSize: SIZES.xxLarge, fontFamily: FONT.regular, marginBottom: 10 }}>My Metrics</Text>
+                <View style={{ flex: 1, position: 'absolute', marginTop: 295, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 15}}>
+                    <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10 }}>My Metrics</Text>
                     <View style={styles.metricContainer}>
                         <View style={styles.metricRectangle}>
                             <Text style={{ color: '#4D506F', fontFamily: FONT.regular, fontSize: SIZES.large }}>2000</Text>
@@ -181,6 +184,7 @@ const styles = StyleSheet.create({
     metricContainer: {
         flexDirection: 'row',
         marginBottom: 10,
+        marginLeft: 10,
     },
     metricRectangle: {
         width: 141,

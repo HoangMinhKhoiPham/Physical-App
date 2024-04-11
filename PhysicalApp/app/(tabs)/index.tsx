@@ -11,13 +11,13 @@ export default function TabOneScreen() {
         justifyContent: "center",
       }}
     >
-      <Text style={{ fontSize: SIZES.xxLarge, fontFamily: FONT.bold }}>
+      <Text style={{ fontSize: SIZES.xxxLarge, fontFamily: FONT.regular }}>
         Smile & Sweat
       </Text>
       <View
         style={{
           marginVertical: 30,
-          height: 1,
+          height: 10,
           width: "80%",
         }}
       />

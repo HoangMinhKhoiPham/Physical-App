@@ -10,19 +10,19 @@ const windowHeight = Dimensions.get("window").height;
 export default function WelcomeScreen() {
     return (
         <View style={styles.container}>
-            {/* Image taking 1/2 of the page */}
-            <Image
-                style={styles.image}
-                source={require("../../assets/images/HomePageImage.png")}
-            />
-
             {/* App name */}
-            <Text style={styles.appName}>Smile & Sweat</Text>
+            <Text style={styles.appName}>Welcome to Smile & Sweat</Text>
 
             {/* Short slogan */}
             <Text style={styles.slogan}>
-                Get fit, stay healthy, and smile while sweating!
+                Smile More, Sweat Better!
             </Text>
+
+            {/* Image taking 1/2 of the page */}
+            <Image
+                style={styles.image}
+                source={require("../../assets/images/logo.png")}
+            />
 
             {/* Button to get started */}
             <Pressable style={styles.button}>
@@ -40,29 +40,34 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     appName: {
-        fontSize: SIZES.xLarge,
+        fontSize: SIZES.xxLarge,
         fontFamily: FONT.bold,
         marginBottom: 10,
+        textAlign: "center",
     },
     slogan: {
-        fontSize: SIZES.medium,
+        fontSize: SIZES.xLarge,
         fontFamily: FONT.regular,
         textAlign: "center",
         marginBottom: 20,
     },
     image: {
-        width: windowWidth,
-        height: windowHeight / 1.5,
         resizeMode: "cover",
+        height: "30%",
         marginBottom: 20,
     },
     button: {
         backgroundColor: COLORS.primary,
+        width: "60%",
         paddingVertical: 15,
         paddingHorizontal: 30,
-        borderRadius: 10,
+        borderRadius: 22,
+        position: "relative",
+        bottom: -110,
     },
     buttonText: {
+        color: '#fff',
+        textAlign: "center",
         fontSize: SIZES.medium,
         fontFamily: FONT.bold,
     },
