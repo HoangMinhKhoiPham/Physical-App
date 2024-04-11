@@ -33,20 +33,6 @@ export default function TabLayout() {
                 options={{
                     title: "Home",
                     tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-                    headerRight: () => (
-                        <Link href="/modal" asChild>
-                            <Pressable>
-                                {({ pressed }) => (
-                                    <FontAwesome
-                                        name="info-circle"
-                                        size={25}
-                                        color={Colors[colorScheme ?? "light"].text}
-                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                                    />
-                                )}
-                            </Pressable>
-                        </Link>
-                    ),
                 }}
             />
 
@@ -55,20 +41,6 @@ export default function TabLayout() {
                 options={{
                     title: "Explore",
                     tabBarIcon: ({ color }) => <TabBarIcon name="globe" color={color} />,
-                    headerRight: () => (
-                        <Link href="/modal" asChild>
-                            <Pressable>
-                                {({ pressed }) => (
-                                    <FontAwesome
-                                        name="info-circle"
-                                        size={25}
-                                        color={Colors[colorScheme ?? "light"].text}
-                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                                    />
-                                )}
-                            </Pressable>
-                        </Link>
-                    ),
                 }}
             />
 
@@ -77,20 +49,6 @@ export default function TabLayout() {
                 options={{
                     title: "MyExercises",
                     tabBarIcon: ({ color }) => <TabBarIcon name="bicycle" color={color} />,
-                    headerRight: () => (
-                        <Link href="/modal" asChild>
-                            <Pressable>
-                                {({ pressed }) => (
-                                    <FontAwesome
-                                        name="info-circle"
-                                        size={25}
-                                        color={Colors[colorScheme ?? "light"].text}
-                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                                    />
-                                )}
-                            </Pressable>
-                        </Link>
-                    ),
                 }}
             />
 
@@ -99,20 +57,6 @@ export default function TabLayout() {
                 options={{
                     title: "Rewards",
                     tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
-                    headerRight: () => (
-                        <Link href="/modal" asChild>
-                            <Pressable>
-                                {({ pressed }) => (
-                                    <FontAwesome
-                                        name="info-circle"
-                                        size={25}
-                                        color={Colors[colorScheme ?? "light"].text}
-                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                                    />
-                                )}
-                            </Pressable>
-                        </Link>
-                    ),
                 }}
             />
 
@@ -121,20 +65,6 @@ export default function TabLayout() {
                 options={{
                     title: "Forum",
                     tabBarIcon: ({ color }) => <TabBarIcon name="comments" color={color} />,
-                    headerRight: () => (
-                        <Link href="/modal" asChild>
-                            <Pressable>
-                                {({ pressed }) => (
-                                    <FontAwesome
-                                        name="info-circle"
-                                        size={25}
-                                        color={Colors[colorScheme ?? "light"].text}
-                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                                    />
-                                )}
-                            </Pressable>
-                        </Link>
-                    ),
                 }}
             />
 
@@ -143,20 +73,6 @@ export default function TabLayout() {
                 options={{
                     title: "Profile",
                     tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
-                    headerRight: () => (
-                        <Link href="/modal" asChild>
-                            <Pressable>
-                                {({ pressed }) => (
-                                    <FontAwesome
-                                        name="info-circle"
-                                        size={25}
-                                        color={Colors[colorScheme ?? "light"].text}
-                                        style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                                    />
-                                )}
-                            </Pressable>
-                        </Link>
-                    ),
                 }}
             />
         </Tabs>
