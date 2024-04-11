@@ -19,8 +19,13 @@ export default function Home() {
                     alignItems: "center",
                 }}
             >
+                <View>
+                    <Text style={styles.user}>
+                        Hi, Thomassimoalala!
+                    </Text>
+                </View>
                 <View style={styles.container}>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 50 , marginLeft: 10}}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 45, marginLeft: 10}}>
                         <View style={styles.rectangle}>
                             <FontAwesome name="bolt" size={30} color="#597EFF" style={{ marginRight: 5 }} />
                             <Text style={{ fontSize: SIZES.xLarge, fontFamily: FONT.regular, color: '#597EFF'}}>
@@ -74,7 +79,7 @@ export default function Home() {
                 style={{
                     flex: 1,
                     position: 'absolute',
-                    marginTop: 220,
+                    marginTop: 255,
                     flexDirection: 'column',
                     alignItems: 'flex-start',
                     marginLeft: 10,
@@ -84,6 +89,8 @@ export default function Home() {
                 <View style={styles.pointsContainer}>
                     <ProgressBar value={25000} />
                 </View>
+
+                <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginTop: 20, marginBottom: 10, marginLeft: 15}}>Most Recent Activity</Text>
 
                 <View style={{ flex: 1, position: 'absolute', marginTop: 295, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 15}}>
                     <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10 }}>My Metrics</Text>
@@ -246,4 +253,10 @@ const styles = StyleSheet.create({
         fontFamily: FONT.regular,
         marginBottom: 10,
     },
+    user:{
+        fontSize: SIZES.xxLarge,
+        fontFamily: FONT.regular,
+        marginLeft: 2,
+        textAlign: 'left',
+    }
 });
