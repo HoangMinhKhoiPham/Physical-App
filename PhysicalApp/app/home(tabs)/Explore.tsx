@@ -1,8 +1,12 @@
-import { Text, View } from "@/components/Themed";
+import {Text, View} from "@/components/Themed";
 import LogInForm from "@/components/LogInForm";
-import { FONT, SIZES } from "../../constants";
+import {FONT, SIZES} from "../../constants";
+import Exercise from "@/components/Exercise";
+import SearchBar from "@/components/SearchBar";
+import {StyleSheet} from "react-native";
 
 export default function Explore() {
+
     return (
         <View
             style={{
@@ -11,17 +15,31 @@ export default function Explore() {
                 justifyContent: "center",
             }}
         >
-            <Text style={{ fontSize: SIZES.xxxLarge, fontFamily: FONT.regular }}>
-                Smile & Sweat
+            <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>
+                Explore
             </Text>
             <View
                 style={{
                     marginVertical: 30,
-                    height: 1,
-                    width: "80%",
                 }}
             />
-            <LogInForm />
+            <View>
+                <SearchBar></SearchBar>
+            </View>
+            <View style={styles.container}>
+                <Exercise></Exercise>
+                <Exercise></Exercise>
+                <Exercise></Exercise>
+            </View>
+
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'column',
+        rowGap: 20,
+    },
+
+})
