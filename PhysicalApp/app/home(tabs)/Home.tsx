@@ -74,7 +74,7 @@ export default function Home() {
                 style={{
                     flex: 1,
                     position: 'absolute',
-                    marginTop: 250,
+                    marginTop: 220,
                     flexDirection: 'column',
                     alignItems: 'flex-start',
                     marginLeft: 10,
@@ -85,7 +85,6 @@ export default function Home() {
                     <ProgressBar value={25000} />
                 </View>
 
-                <View style={styles.separator}></View>
                 <View style={{ flex: 1, position: 'absolute', marginTop: 295, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 15}}>
                     <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10 }}>My Metrics</Text>
                     <View style={styles.metricContainer}>
@@ -239,7 +238,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     pointsContainer: {
-        marginTop: 20,
+        marginTop: 8,
         paddingHorizontal: 20,
     },
     sectionTitle: {
