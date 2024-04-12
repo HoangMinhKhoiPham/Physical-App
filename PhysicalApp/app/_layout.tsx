@@ -56,8 +56,8 @@ function RootLayoutNav() {
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="home(tabs)" />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="home(tabs)" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );
