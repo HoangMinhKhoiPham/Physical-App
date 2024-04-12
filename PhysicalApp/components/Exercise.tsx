@@ -47,6 +47,13 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 15,
         gap: -5,
+        shadowColor: 'black',
+        shadowRadius: 12,
+        shadowOpacity: 1,
+        elevation: 5,
+        shadowOffset: {
+            width: 0,
+            height: 4}
     },
     topRow: {
         flexDirection: 'row',
