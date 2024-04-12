@@ -1,6 +1,6 @@
 import { Text, View } from "@/components/Themed";
 import LogInForm from "@/components/LogInForm";
-import { FONT, SIZES } from "../../constants";
+import {COLORS, FONT, SIZES} from "../../constants";
 import {FontAwesome} from "@expo/vector-icons";
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import ProgressBar from "@/components/PointBar";
@@ -28,7 +28,7 @@ export default function Home() {
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 45, marginLeft: 10}}>
                         <View style={styles.rectangle}>
                             <FontAwesome name="bolt" size={30} color="#597EFF" style={{ marginRight: 5 }} />
-                            <Text style={{ fontSize: SIZES.xLarge, fontFamily: FONT.regular, color: '#597EFF'}}>
+                            <Text style={{ fontSize: SIZES.xLarge, fontFamily: FONT.regular, color: COLORS.primary}}>
                                 52
                             </Text>
                         </View>
@@ -87,7 +87,7 @@ export default function Home() {
             >
                 <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10, marginLeft: 15}}>My Points</Text>
                 <View style={styles.pointsContainer}>
-                    <ProgressBar value={25000} />
+                    <ProgressBar value={8000} />
                 </View>
 
                 <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginTop: 20, marginBottom: 10, marginLeft: 15}}>Most Recent Activity</Text>
@@ -96,8 +96,8 @@ export default function Home() {
                     <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10 }}>My Metrics</Text>
                     <View style={styles.metricContainer}>
                         <View style={styles.metricRectangle}>
-                            <Text style={{ color: '#4D506F', fontFamily: FONT.regular, fontSize: SIZES.large }}>2000</Text>
-                            <Text style={{ color: '#4D506F', fontFamily: FONT.regular }}>kcal</Text>
+                            <Text style={{ color: COLORS.text, fontFamily: FONT.regular, fontSize: SIZES.large }}>2000</Text>
+                            <Text style={{ color: COLORS.text, fontFamily: FONT.regular }}>kcal</Text>
                             <Image source={require('../../assets/images/fire.png')}  style={{
                                 width: 30,
                                 height: 50,
@@ -106,8 +106,8 @@ export default function Home() {
                             }}/>
                         </View>
                         <View style={styles.metricRectangle}>
-                            <Text style={{ color: '#4D506F', fontFamily: FONT.regular, fontSize: SIZES.large }}>452</Text>
-                            <Text style={{ color: '#4D506F', fontFamily: FONT.regular }}>min</Text>
+                            <Text style={{ color: COLORS.text, fontFamily: FONT.regular, fontSize: SIZES.large }}>452</Text>
+                            <Text style={{ color: COLORS.text, fontFamily: FONT.regular }}>min</Text>
                             <Image source={require('../../assets/images/lightning.png')}  style={{
                                 width: 30,
                                 height: 40,
@@ -118,8 +118,8 @@ export default function Home() {
                     </View>
                     <View style={styles.metricContainer}>
                         <View style={styles.metricRectangle}>
-                            <Text style={{ color: '#4D506F', fontFamily: FONT.regular, fontSize: SIZES.large }}>55</Text>
-                            <Text style={{ color: '#4D506F', fontFamily: FONT.regular }}>km</Text>
+                            <Text style={{ color: COLORS.text, fontFamily: FONT.regular, fontSize: SIZES.large }}>55</Text>
+                            <Text style={{ color: COLORS.text, fontFamily: FONT.regular }}>km</Text>
                             <Image source={require('../../assets/images/person-walking.png')}  style={{
                                 width: 30,
                                 height: 40,
@@ -128,8 +128,8 @@ export default function Home() {
                             }}/>
                         </View>
                         <View style={styles.metricRectangle}>
-                            <Text style={{ color: '#4D506F', fontFamily: FONT.regular, fontSize: SIZES.large }}>1200</Text>
-                            <Text style={{ color: '#4D506F', fontFamily: FONT.regular }}>pts</Text>
+                            <Text style={{ color: COLORS.text, fontFamily: FONT.regular, fontSize: SIZES.large }}>1200</Text>
+                            <Text style={{ color: COLORS.text, fontFamily: FONT.regular }}>pts</Text>
                             <Image source={require('../../assets/images/coins.png')}  style={{
                                 width: 35,
                                 height: 40,
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     rectangle: {
         width: 80,
         height: 42,
-        backgroundColor: '#E4ECFF',
+        backgroundColor: COLORS.secondary,
         borderRadius: 22,
         justifyContent: 'center',
         alignItems: 'center',
@@ -165,27 +165,12 @@ const styles = StyleSheet.create({
     goalContainer: {
         width: 154,
         height: 42,
-        backgroundColor: '#E4ECFF',
+        backgroundColor: COLORS.secondary,
         borderRadius: 22,
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
         margin: 5
-    },
-    addButton: {
-        width: 80,
-        height: 47,
-        backgroundColor: '#597EFF',
-        borderRadius: 22,
-        borderWidth: 2,
-        borderColor: '#FFFFFF',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    addButtonText: {
-        fontSize: 16,
-        color: '#FFFFFF',
-        fontFamily: FONT.bold,
     },
     metricContainer: {
         flexDirection: 'row',
@@ -195,22 +180,13 @@ const styles = StyleSheet.create({
     metricRectangle: {
         width: 141,
         height: 91,
-        backgroundColor: '#E4ECFF',
+        backgroundColor: COLORS.secondary,
         borderRadius: 22,
         justifyContent: 'center',
         alignItems: 'center',
         margin: 10,
         flexDirection: 'row',
 
-    },
-    separator: {
-        height: 1,
-        width: 280,
-        marginLeft: 50,
-        backgroundColor: '#4D506F',
-        marginVertical: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     calendarContainer: {
         flexDirection: 'row',
@@ -230,8 +206,9 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         marginTop: 5,
+        marginRight: 10,
         borderRadius: 15,
-        backgroundColor: '#597EFF',
+        backgroundColor: COLORS.primary,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -239,6 +216,7 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         marginTop: 5,
+        marginRight: 10,
         borderRadius: 15,
         backgroundColor: '#D9D9D9',
         justifyContent: 'center',

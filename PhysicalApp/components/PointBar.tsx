@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {FONT} from "@/constants";
-import {COLORS} from "../constants";
+import {COLORS} from "@/constants";
 
 class ProgressBar extends React.Component<{ value: any }> {
     render() {
