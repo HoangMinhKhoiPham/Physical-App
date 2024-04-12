@@ -14,7 +14,18 @@ export default function Forum() {
                 paddingBottom: 20, // Add padding to accommodate the button
             }}
         >
-            <View style={{ marginTop: 22 }}>
+            <View
+                style={{
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginTop: 40
+                }}
+            >
+                <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>
+                    Forum
+                </Text>
+            </View>
+            <View style={{ marginTop: 20 }}>
                 <CategoriesFilter />
             </View>
             <View style={{ flex: 1 }}>
