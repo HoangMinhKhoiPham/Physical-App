@@ -14,7 +14,7 @@ export default function Explore() {
                 flex: 1,
                 alignItems: "center",
                 justifyContent: "center",
-                marginTop: 25,
+                marginTop: 100,
             }}
         >
             <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>
@@ -39,8 +39,6 @@ export default function Explore() {
 
             <View style={styles.container}>
                 <Exercise></Exercise>
-                <Exercise></Exercise>
-                <Exercise></Exercise>
             </View>
 
         </View>
@@ -50,8 +48,9 @@ export default function Explore() {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        rowGap: 20,
+        gap: 20,
         marginTop: 20,
+        marginBottom: 70,
     },
     searchBar: {
         width: 360,
