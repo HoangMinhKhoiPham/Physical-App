@@ -15,7 +15,7 @@ export default function MyExercises() {
                 flex: 1,
                 alignItems: "center",
                 justifyContent: "center",
-                paddingTop: 80,
+                paddingTop: 150,
             }}
         >
             <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>
@@ -39,6 +39,7 @@ export default function MyExercises() {
             <View style={{ marginTop: 20 }}>
                 <CurrentExercise />
             </View>
+            <View style={{ height: 100 }} />
         </View>
     );
 }
