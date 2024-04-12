@@ -7,7 +7,7 @@ import {
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import { useColorScheme } from "@/components/useColorScheme";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 export {
@@ -52,23 +52,12 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
-  let token;
-  // @ts-ignore
-  useEffect(() => {
-    (async () => {
-      token = await AsyncStorage.getItem('userData')
-    })()
-  }, [])
-  console.log(token)
+
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
-        {token ? (
-                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            ):
-            <Stack.Screen name="home(tabs)" options={{ headerShown: false }} />
-
-        }
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="home(tabs)" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );
