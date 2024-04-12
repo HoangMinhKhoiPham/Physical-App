@@ -102,7 +102,7 @@ const PostCard = () => {
 const styles = StyleSheet.create({
     rectangle: {
         width: 375,
-        height: 83,
+        height: 90,
         margin: 10,
         marginRight: 10,
         borderRadius: 22,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     footerContainer: {
         flexDirection: "row",
         justifyContent: "flex-end",
-        marginTop: -20,
+        marginTop: -25,
     },
     footerItem: {
         flexDirection: "row",
