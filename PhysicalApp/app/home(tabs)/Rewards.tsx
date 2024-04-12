@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         padding: 15
     },
     rewardFlex: {
-        width: '90%',
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         gap: 5,

@@ -18,21 +18,20 @@ class Reward extends React.Component<{ name: string, points: number, currentBala
                     </Pressable>
                 </View>
             );
-        } else {
-            return (
-                <View style={styles.containerButPoor}>
-                    <View style={styles.poorNameContainer}>
-                        <Text
-                            style={styles.nameButPoor}>{name}&nbsp;</Text>
-                        <Text
-                            style={styles.pointsButPoor}>({points}&nbsp;pts)</Text>
-                    </View>
-                    <Pressable style={styles.buttonButPoor}>
-                        <Text style={styles.claimButPoor}>Claim</Text>
-                    </Pressable>
-                </View>
-            );
         }
+        return (
+            <View style={styles.containerButPoor}>
+                <View style={styles.poorNameContainer}>
+                    <Text
+                        style={styles.nameButPoor}>{name}&nbsp;</Text>
+                    <Text
+                        style={styles.pointsButPoor}>({points}&nbsp;pts)</Text>
+                </View>
+                <Pressable style={styles.buttonButPoor}>
+                    <Text style={styles.claimButPoor}>Claim</Text>
+                </Pressable>
+            </View>
+        );
     }
 }
 
