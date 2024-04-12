@@ -1,6 +1,6 @@
 import React from "react";
-import { Text, TouchableOpacity, StyleSheet } from "react-native";
-import { COLORS, FONT, SIZES } from "../constants";
+import {Text, TouchableOpacity, StyleSheet} from "react-native";
+import {COLORS, FONT, SIZES} from "../constants";
 
 export type BtnProps = {
     content: string;
@@ -8,10 +8,14 @@ export type BtnProps = {
     isPrimary: boolean;
 };
 
-const RegisterBtn: React.FC<BtnProps> = ({ content, handlePress, isPrimary }) => {
+const RegisterBtn: React.FC<BtnProps> = ({content, handlePress, isPrimary}) => {
     return (
         <TouchableOpacity onPress={handlePress} style={styles(isPrimary).btn}>
-            <Text style={{ color: isPrimary ? COLORS.secondary : COLORS.black }}>
+            <Text
+                style={{
+                    color: isPrimary ? 'white' : COLORS.text,
+                    fontSize: SIZES.medium,
+            }}>
                 {content}
             </Text>
         </TouchableOpacity>

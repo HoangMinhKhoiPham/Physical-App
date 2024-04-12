@@ -67,7 +67,8 @@ export const RegisterForm = () => {
                     style={{
                         fontFamily: FONT.regular,
                         fontSize: SIZES.large,
-                        color: "black",
+                        color: COLORS.text,
+                        paddingTop: 10,
                     }}
                 >
                     Let's create a new account for you!
@@ -80,7 +81,7 @@ export const RegisterForm = () => {
                     justifyContent: "space-between",
                     alignItems: "center",
                     flexDirection: "column",
-                    gap: SIZES.small,
+                    gap: SIZES.medium,
                     marginTop: SIZES.large,
                     height: 300,
                 }}
@@ -218,7 +219,7 @@ export const RegisterForm = () => {
                         width: "100%",
                     }}
                 >
-                    <RegisterBtn content="Create Account" handlePress={onHandleSignUp} isPrimary={true}/>
+                    <RegisterBtn content="Create new account" handlePress={onHandleSignUp} isPrimary={true}/>
                 </View>
             </View>
 
@@ -234,6 +235,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
         paddingHorizontal: SIZES.medium,
+        color: COLORS.text,
     },
     createAccountButton:{
         justifyContent: "space-between",
@@ -246,19 +248,19 @@ const styles = StyleSheet.create({
     checkBoxContainer:{
         flexDirection: 'row',
         alignItems: 'center',
-        paddingTop: 10
+        padding: 20,
     },
     checkbox: {
         width: 20,
         height: 20,
         borderWidth: 1,
         borderColor: COLORS.primary,
-        borderRadius: 4,
+        borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
     },
     checkmark: {
-        fontSize: 16,
+        fontSize: 14,
         color: COLORS.primary,
     },
     checkboxText: {
