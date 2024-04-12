@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image, FlatList} from 'react-native';
-import {COLORS, FONT, SIZES} from "@/constants";
-import {FontAwesome} from "@expo/vector-icons";
-import {fontFamily} from "nativewind/dist/postcss/to-react-native/properties/font-family";
-import {fontSize} from "nativewind/dist/tailwind/native/font-size";
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
+import { COLORS, FONT, SIZES } from "@/constants";
+import { FontAwesome } from "@expo/vector-icons";
+// @ts-ignore
+import finishedIcon from '../assets/images/finishedIcon.png';
 
 const CurrentExercise = () => {
     const [data, setData] = useState([
@@ -61,12 +61,12 @@ const CurrentExercise = () => {
     return (
         <FlatList
             data={data}
-            renderItem={({item}) => (
+            renderItem={({ item }) => (
                 <View style={styles.container}>
                     <View style={styles.topRow}>
                         <Text style={styles.exerciseTitle}>{item.title}</Text>
                         <TouchableOpacity style={styles.addListButton}>
-                            <FontAwesome name="plus" size={20} color={COLORS.secondary}/>
+                            <FontAwesome name="plus" size={20} color={COLORS.secondary} />
                         </TouchableOpacity>
                     </View>
                     <View style={styles.bottomRow}>
@@ -80,14 +80,14 @@ const CurrentExercise = () => {
                                 <Text style={styles.descriptionText}>{item.duration} minutes</Text>
                             </View>
                         </View>
-                        <Image source={item.image} style={{
-                            width: 160,
-                            height: 160,
-                            resizeMode: 'cover',
-                            objectFit: 'contain',
-                            marginTop: -12,
-                            marginRight: 40,
-                        }}/>
+                        <View style={styles.imageContainer}>
+                            <Image source={item.image} style={styles.mainImage} />
+                            {/* Add a View to wrap smaller image and text */}
+                            <View style={styles.textContainer}>
+                                <Text style={styles.text}>complete</Text>
+                                <Image source={finishedIcon} style={styles.smallerImage} />
+                            </View>
+                        </View>
                     </View>
                 </View>
             )}
@@ -104,16 +104,14 @@ const styles = StyleSheet.create({
         borderRadius: 22,
         paddingHorizontal: 15,
         paddingVertical: 15,
-        gap: -5,
         shadowColor: 'black',
         shadowRadius: 12,
         shadowOpacity: 1,
         elevation: 5,
-        shadowOffset:
-            {
-                width: 0,
-                height: 4
-            }
+        shadowOffset: {
+            width: 0,
+            height: 4
+        }
     },
     topRow: {
         flexDirection: 'row',
@@ -165,7 +163,37 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 5,
         marginTop: -5,
-    }
+    },
+    imageContainer: {
+        position: 'relative',
+    },
+    mainImage: {
+        width: 160,
+        height: 160,
+        resizeMode: 'cover',
+        objectFit: 'contain',
+        marginTop: -12,
+        marginRight: 40,
+    },
+    smallerImage: {
+        width: 50,
+        height: 50,
+        resizeMode: 'cover',
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+    },
+    textContainer: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    text: {
+        color: 'black',
+        marginRight: 50, // Adjust the margin as needed
+    },
 });
 
 export default CurrentExercise;
