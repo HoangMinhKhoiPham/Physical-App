@@ -1,11 +1,16 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image, FlatList} from 'react-native';
-import {COLORS, FONT, SIZES} from "@/constants";
-import {FontAwesome} from "@expo/vector-icons";
-import {fontFamily} from "nativewind/dist/postcss/to-react-native/properties/font-family";
-import {fontSize} from "nativewind/dist/tailwind/native/font-size";
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { COLORS, FONT, SIZES } from "@/constants";
+import { FontAwesome } from "@expo/vector-icons";
+// @ts-ignore
+import finishedIcon1 from '../assets/images/finishedIcon.png';
+// @ts-ignore
+import finishedIcon2 from '../assets/images/continueIcon.png';
+// @ts-ignore
+import finishedIcon3 from '../assets/images/startIcon.png';
+import ProgressBar from "@/components/ProgressBar";
 
-const Exercise = () => {
+const CurrentExercise = () => {
     const [data, setData] = useState([
         {
             title: "Chest & abdominal exercises",
@@ -13,7 +18,10 @@ const Exercise = () => {
             image: require("../assets/images/chest&abdominal.png"),
             nbExercises: 10,
             nbPoints: 200,
-            duration: 45
+            duration: 45,
+            // smallerImage: finishedIcon3,
+            text: "Start",
+            progress: 0,
         },
         {
             title: "Home Workout",
@@ -21,7 +29,10 @@ const Exercise = () => {
             image: require("../assets/images/homeworkout.png"),
             nbExercises: 8,
             nbPoints: 150,
-            duration: 40
+            duration: 40,
+            // smallerImage: finishedIcon2,
+            text: "Continue",
+            progress: 75,
         },
         {
             title: "Yoga",
@@ -29,45 +40,19 @@ const Exercise = () => {
             image: require("../assets/images/yoga.png"),
             nbExercises: 12,
             nbPoints: 180,
-            duration: 60
+            duration: 60,
+            // smallerImage: finishedIcon1,
+            text: "Completed",
+            progress: 100
         },
-        {
-            title: "Outdoor Cardio",
-            level: "Intermediate",
-            image: require("../assets/images/outdoorcardio.png"),
-            nbExercises: 15,
-            nbPoints: 500,
-            duration: 90
-        },
-        {
-            title: "Cycling",
-            level: "Beginner",
-            image: require("../assets/images/cycling.png"),
-            nbExercises: 14,
-            nbPoints: 230,
-            duration: 80
-        },
-        {
-            title: "Leg Workout",
-            level: "Advanced",
-            image: require("../assets/images/legworkout.png"),
-            nbExercises: 8,
-            nbPoints: 450,
-            duration: 30
-        },
-
     ]);
 
     return (
-        <FlatList
-            data={data}
-            renderItem={({item}) => (
-                <View style={styles.container}>
+        <ScrollView style={styles.scrollView}>
+            {data.map((item, index) => (
+                <View key={index} style={styles.container}>
                     <View style={styles.topRow}>
                         <Text style={styles.exerciseTitle}>{item.title}</Text>
-                        <TouchableOpacity style={styles.addListButton}>
-                            <FontAwesome name="plus" size={20} color={COLORS.secondary}/>
-                        </TouchableOpacity>
                     </View>
                     <View style={styles.bottomRow}>
                         <View style={styles.leftBottomRow}>
@@ -79,23 +64,27 @@ const Exercise = () => {
                                 <Text style={styles.descriptionText}>{item.nbPoints} points</Text>
                                 <Text style={styles.descriptionText}>{item.duration} minutes</Text>
                             </View>
+                            <ProgressBar label={item.text} progress={item.progress}></ProgressBar>
                         </View>
-                        <Image source={item.image} style={{
-                            width: 160,
-                            height: 160,
-                            resizeMode: 'cover',
-                            objectFit: 'contain',
-                            marginTop: -12,
-                            marginRight: 50,
-                        }}/>
+                        <View style={styles.imageContainer}>
+                            <Image source={item.image} style={styles.mainImage} />
+                            {/* Add a View to wrap smaller image and text */}
+                            {/*<View style={styles.textContainer}>*/}
+                            {/*    <Text style={styles.text}>{item.text}</Text>*/}
+                            {/*    <Image source={item.smallerImage} style={styles.smallerImage} />*/}
+                            {/*</View>*/}
+                        </View>
                     </View>
                 </View>
-            )}
-        />
+            ))}
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
+    scrollView: {
+        flex: 1,
+    },
     container: {
         width: 380,
         height: 195,
@@ -104,16 +93,14 @@ const styles = StyleSheet.create({
         borderRadius: 22,
         paddingHorizontal: 15,
         paddingVertical: 15,
-        gap: -5,
         shadowColor: 'black',
         shadowRadius: 12,
         shadowOpacity: 1,
         elevation: 5,
-        shadowOffset:
-            {
-                width: 0,
-                height: 4
-            }
+        shadowOffset: {
+            width: 0,
+            height: 4
+        }
     },
     topRow: {
         flexDirection: 'row',
@@ -129,6 +116,7 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: 5,
     },
     levelText: {
         color: 'white',
@@ -141,7 +129,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
     },
     description: {
-        marginTop: 15,
+        marginTop: 6,
+        marginBottom: 10,
         flexWrap: 'wrap',
     },
     descriptionText: {
@@ -165,7 +154,36 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 5,
         marginTop: -5,
-    }
+    },
+    imageContainer: {
+        position: 'relative',
+    },
+    mainImage: {
+        width: 160,
+        height: 160,
+        resizeMode: 'cover',
+        objectFit: 'contain',
+    },
+    smallerImage: {
+        width: 30,
+        height: 30,
+        resizeMode: 'cover',
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+    },
+    textContainer: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    text: {
+        color: COLORS.text,
+        marginRight: 35,
+        marginBottom: 5,
+    },
 });
 
-export default Exercise;
+export default CurrentExercise;
