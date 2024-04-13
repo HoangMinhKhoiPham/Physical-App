@@ -228,8 +228,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     pointsContainer: {
+        alignSelf: 'center',
         marginTop: 8,
-        paddingHorizontal: 20,
     },
     recentContainer: {
         marginTop: 8,
