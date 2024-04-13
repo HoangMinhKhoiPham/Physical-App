@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {View, Text, StyleSheet, Pressable, TouchableOpacity} from 'react-native';
 import {FONT, COLORS, SIZES} from "@/constants";
 
 class Reward extends React.Component<{ name: string, points: number, currentBalance: number }, any> {
@@ -13,9 +13,9 @@ class Reward extends React.Component<{ name: string, points: number, currentBala
                 <View style={styles.container}>
                     <Text
                         style={styles.name}>{name} ({points}&nbsp;pts)</Text>
-                    <Pressable style={styles.button}>
+                    <TouchableOpacity style={styles.button}>
                         <Text style={styles.claim}>Claim</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             );
         }
@@ -27,9 +27,9 @@ class Reward extends React.Component<{ name: string, points: number, currentBala
                     <Text
                         style={styles.pointsButPoor}>({points}&nbsp;pts)</Text>
                 </View>
-                <Pressable style={styles.buttonButPoor}>
+                <View style={styles.buttonButPoor}>
                     <Text style={styles.claimButPoor}>Claim</Text>
-                </Pressable>
+                </View>
             </View>
         );
     }

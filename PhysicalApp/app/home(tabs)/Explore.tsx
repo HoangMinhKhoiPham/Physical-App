@@ -1,10 +1,8 @@
 import {Text, View} from "@/components/Themed";
-import LogInForm from "@/components/LogInForm";
-import {COLORS, FONT, SIZES} from "../../constants";
+import {COLORS, FONT, SIZES} from "@/constants";
 import Exercise from "@/components/Exercise";
 import {Image, StyleSheet, TextInput} from "react-native";
 import React from "react";
-import {black} from "colorette";
 
 export default function Explore() {
 
@@ -13,8 +11,7 @@ export default function Explore() {
             style={{
                 flex: 1,
                 alignItems: "center",
-                justifyContent: "center",
-                paddingTop: 100,
+                paddingTop: 50,
             }}
         >
             <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>

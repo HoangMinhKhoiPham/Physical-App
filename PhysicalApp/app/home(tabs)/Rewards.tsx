@@ -1,5 +1,5 @@
 import {Text, View} from "@/components/Themed";
-import {COLORS, FONT, SIZES} from "../../constants";
+import {FONT, SIZES} from "@/constants";
 import Reward from "@/components/Reward";
 import {StyleSheet} from "react-native";
 import ProgressBar from "@/components/PointBar";
@@ -10,27 +10,28 @@ export default function Rewards() {
         <View
             style={{
                 flex: 1,
-                alignItems: "center",
-                paddingTop: 60,
+                paddingTop: 50,
                 paddingHorizontal: 20,
-            }}
-        >
-            <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular, paddingBottom: 10}}>
-                My Achievements
-            </Text>
-            <Text style={styles.sectionTitle}>
-                My Points
-            </Text>
-            <View>
-                <ProgressBar value={currentBalance}/>
-            </View>
-            <Text style={styles.sectionTitle}>
-                Rewards
-            </Text>
-            <View style={styles.rewardFlex}>
-                <Reward name={"Eat some sweets"} points={200} currentBalance={currentBalance}></Reward>
-                <Reward name={"Have some coffee/tea"} points={300} currentBalance={currentBalance}></Reward>
-                <Reward name={"Take a walk"} points={10000} currentBalance={currentBalance}></Reward>
+                alignItems: "center",
+            }}>
+            <View style={{maxWidth: 400, alignItems: "center",}}>
+                <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular, paddingBottom: 10}}>
+                    My Achievements
+                </Text>
+                <Text style={styles.sectionTitle}>
+                    My Points
+                </Text>
+                <View>
+                    <ProgressBar value={currentBalance}/>
+                </View>
+                <Text style={styles.sectionTitle}>
+                    Rewards
+                </Text>
+                <View style={styles.rewardFlex}>
+                    <Reward name={"Eat some sweets"} points={200} currentBalance={currentBalance}></Reward>
+                    <Reward name={"Have some coffee/tea"} points={300} currentBalance={currentBalance}></Reward>
+                    <Reward name={"Take a walk"} points={10000} currentBalance={currentBalance}></Reward>
+                </View>
             </View>
         </View>
     );
