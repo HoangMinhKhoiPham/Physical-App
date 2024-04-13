@@ -1,21 +1,16 @@
 import { Text, View } from "@/components/Themed";
-import {COLORS, FONT, SIZES} from "../../constants";
-import Exercise from "@/components/Exercise";
-import progressBar from "@/components/ProgressBar";
-import ProgressBar from "@/components/ProgressBar";
+import {COLORS, FONT, SIZES} from "@/constants";
 import CurrentExercise from "@/components/CurrentExercise";
 import React from "react";
 import {Image, StyleSheet, TextInput} from "react-native";
 
 export default function MyExercises() {
-    const progress = 0.7;
     return (
         <View
             style={{
                 flex: 1,
                 alignItems: "center",
-                justifyContent: "center",
-                paddingTop: 100,
+                paddingTop: 50,
             }}
         >
             <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>

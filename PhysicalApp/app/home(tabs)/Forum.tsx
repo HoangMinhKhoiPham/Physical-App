@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesome } from '@expo/vector-icons';
 import CategoriesFilter from "@/components/categoriesFilter";
 import PostCard from "@/components/Post";
-import {StyleSheet, TouchableOpacity} from "react-native";
+import {TouchableOpacity} from "react-native";
 import {FONT, SIZES} from "@/constants";
 
 export default function Forum() {
@@ -12,13 +12,14 @@ export default function Forum() {
             style={{
                 flex: 1,
                 paddingBottom: 20, // Add padding to accommodate the button
+                alignItems: 'center',
+                paddingTop: 50,
             }}
         >
             <View
                 style={{
                     alignItems: "center",
                     justifyContent: "center",
-                    marginTop: 40
                 }}
             >
                 <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>

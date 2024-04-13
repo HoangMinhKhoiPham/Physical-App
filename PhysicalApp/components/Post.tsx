@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import {FONT} from "@/constants";
+import {COLORS, FONT} from "@/constants";
 
 const PostCard = () => {
     const [data, setData] = useState([
@@ -109,11 +109,16 @@ const styles = StyleSheet.create({
         borderRadius: 22,
         paddingHorizontal: 10,
         paddingVertical: 5,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.1,
-        shadowRadius: 7,
-        backgroundColor: "#E4ECFF",
+        backgroundColor: COLORS.secondary,
+        shadowColor: 'black',
+        shadowRadius: 12,
+        shadowOpacity: 1,
+        elevation: 5,
+        shadowOffset:
+            {
+                width: 0,
+                height: 4
+            },
     },
     contentContainer: {
         flexDirection: "row",
@@ -131,14 +136,14 @@ const styles = StyleSheet.create({
         fontFamily: FONT.regular,
         fontSize: 16,
         marginBottom: 5,
-        color: "#4D506F",
+        color: COLORS.text,
     },
     nameText: {
         fontFamily: FONT.bold,
         marginTop: 20,
         fontSize: 14,
         fontWeight: "bold",
-        color: "#4D506F",
+        color: COLORS.text,
     },
     footerContainer: {
         flexDirection: "row",
@@ -155,7 +160,7 @@ const styles = StyleSheet.create({
         fontFamily: FONT.regular,
         marginLeft: 5,
         fontSize: 14,
-        color: "#4D506F",
+        color: COLORS.text,
     },
 });
 
