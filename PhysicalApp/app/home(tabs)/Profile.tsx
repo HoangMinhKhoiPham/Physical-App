@@ -4,6 +4,7 @@ import { FONT, SIZES } from "../../constants";
 import {Image, TouchableOpacity} from "react-native";
 import { FontAwesome } from '@expo/vector-icons'
 import { StyleSheet } from 'react-native';
+import React from "react";
 
 export default function Profile() {
     return (
@@ -17,11 +18,18 @@ export default function Profile() {
                 paddingTop: 70,
             }}
         >
+            <View style={{marginTop: -18}}>
+                <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>
+                    Profile
+                </Text>
+            </View>
             <Image source={require('../../assets/images/Avatar.png')} style={{
                 width: 100,
                 height: 100,
                 borderRadius: 50,
                 alignItems: "center",
+                marginBottom: 12,
+                marginTop: 8,
             }}
                 />
             <View style={styles.container}>
@@ -42,7 +50,7 @@ export default function Profile() {
                 style={{
                     flex: 1,
                     position: 'absolute',
-                    marginTop: 250,
+                    marginTop: 280,
                     flexDirection: 'column', // Display children in columns
                     alignItems: 'flex-start', // Align children to the start of the container
                     marginLeft: 10, // Adjust left margin for better alignment
@@ -69,7 +77,7 @@ export default function Profile() {
                 </View>
 
                 <View style={styles.separator}></View>
-                <View style={{ flex: 1, position: 'absolute', marginTop: 280, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 15 }}>
+                <View style={{ flex: 1, position: 'absolute', marginTop: 250, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 15 }}>
                     <Text style={{ fontSize: SIZES.xxLarge, fontFamily: FONT.regular, marginBottom: 10 }}>My Metrics</Text>
                     <View style={styles.metricContainer}>
                         <View style={styles.metricRectangle}>
@@ -171,7 +179,6 @@ const styles = StyleSheet.create({
     },
     metricContainer: {
         flexDirection: 'row',
-        marginBottom: 10,
     },
     metricRectangle: {
         width: 141,
@@ -187,7 +194,7 @@ const styles = StyleSheet.create({
     separator: {
         height: 1.5,
         width: 280,
-        marginTop: 90,
+        marginTop: 60,
         marginLeft: 50,
         backgroundColor: '#4D506F',
         marginVertical: 10,

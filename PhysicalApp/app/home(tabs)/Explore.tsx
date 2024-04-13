@@ -14,7 +14,7 @@ export default function Explore() {
                 flex: 1,
                 alignItems: "center",
                 justifyContent: "center",
-                marginTop: 100,
+                paddingTop: 100,
             }}
         >
             <Text style={{fontSize: SIZES.xxxLarge, fontFamily: FONT.regular}}>

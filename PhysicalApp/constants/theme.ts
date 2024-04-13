@@ -8,9 +8,9 @@ const COLORS = {
 };
 
 const FONT = {
-  regular: "InriaSerifRegular",
-  italic: "InriaSerifItalic",
-  bold: "InriaSerifBold",
+  regular: "SofiaSansRegular",
+  italic: "SofiaSansItalic",
+  bold: "SofiaSansBold",
 };
 
 const SIZES = {
