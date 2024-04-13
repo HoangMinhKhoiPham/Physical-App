@@ -25,9 +25,9 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    InriaSerifRegular: require("../assets/fonts/InriaSerif-Regular.ttf"),
-    InriaSerifBold: require("../assets/fonts/InriaSerif-Bold.ttf"),
-    InriaSerifItalic: require("../assets/fonts/InriaSerif-Italic.ttf"),
+    SofiaSansRegular: require("../assets/fonts/SofiaSans-Regular.ttf"),
+    SofiaSansBold: require("../assets/fonts/SofiaSans-Bold.ttf"),
+    SofiaSansItalic: require("../assets/fonts/SofiaSans-Italic.ttf"),
     ...FontAwesome.font,
   });
 
