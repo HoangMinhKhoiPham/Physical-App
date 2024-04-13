@@ -86,7 +86,7 @@ const Exercise = () => {
                             resizeMode: 'cover',
                             objectFit: 'contain',
                             marginTop: -12,
-                            marginRight: 40,
+                            marginRight: 50,
                         }}/>
                     </View>
                 </View>

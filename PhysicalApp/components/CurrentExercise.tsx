@@ -8,6 +8,7 @@ import finishedIcon1 from '../assets/images/finishedIcon.png';
 import finishedIcon2 from '../assets/images/continueIcon.png';
 // @ts-ignore
 import finishedIcon3 from '../assets/images/startIcon.png';
+import ProgressBar from "@/components/ProgressBar";
 
 const CurrentExercise = () => {
     const [data, setData] = useState([
@@ -18,8 +19,9 @@ const CurrentExercise = () => {
             nbExercises: 10,
             nbPoints: 200,
             duration: 45,
-            smallerImage: finishedIcon1,
-            text: "complete"
+            // smallerImage: finishedIcon3,
+            text: "Start",
+            progress: 0,
         },
         {
             title: "Home Workout",
@@ -28,8 +30,9 @@ const CurrentExercise = () => {
             nbExercises: 8,
             nbPoints: 150,
             duration: 40,
-            smallerImage: finishedIcon2,
-            text: "continue"
+            // smallerImage: finishedIcon2,
+            text: "Continue",
+            progress: 75,
         },
         {
             title: "Yoga",
@@ -38,10 +41,10 @@ const CurrentExercise = () => {
             nbExercises: 12,
             nbPoints: 180,
             duration: 60,
-            smallerImage: finishedIcon3,
-            text: "start"
+            // smallerImage: finishedIcon1,
+            text: "Completed",
+            progress: 100
         },
-
     ]);
 
     return (
@@ -50,9 +53,6 @@ const CurrentExercise = () => {
                 <View key={index} style={styles.container}>
                     <View style={styles.topRow}>
                         <Text style={styles.exerciseTitle}>{item.title}</Text>
-                        <TouchableOpacity style={styles.addListButton}>
-                            <FontAwesome name="plus" size={20} color={COLORS.secondary} />
-                        </TouchableOpacity>
                     </View>
                     <View style={styles.bottomRow}>
                         <View style={styles.leftBottomRow}>
@@ -64,14 +64,15 @@ const CurrentExercise = () => {
                                 <Text style={styles.descriptionText}>{item.nbPoints} points</Text>
                                 <Text style={styles.descriptionText}>{item.duration} minutes</Text>
                             </View>
+                            <ProgressBar label={item.text} progress={item.progress}></ProgressBar>
                         </View>
                         <View style={styles.imageContainer}>
                             <Image source={item.image} style={styles.mainImage} />
                             {/* Add a View to wrap smaller image and text */}
-                            <View style={styles.textContainer}>
-                                <Text style={styles.text}>{item.text}</Text>
-                                <Image source={item.smallerImage} style={styles.smallerImage} />
-                            </View>
+                            {/*<View style={styles.textContainer}>*/}
+                            {/*    <Text style={styles.text}>{item.text}</Text>*/}
+                            {/*    <Image source={item.smallerImage} style={styles.smallerImage} />*/}
+                            {/*</View>*/}
                         </View>
                     </View>
                 </View>
@@ -115,6 +116,7 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: 5,
     },
     levelText: {
         color: 'white',
@@ -127,7 +129,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
     },
     description: {
-        marginTop: 15,
+        marginTop: 6,
+        marginBottom: 10,
         flexWrap: 'wrap',
     },
     descriptionText: {
@@ -160,8 +163,6 @@ const styles = StyleSheet.create({
         height: 160,
         resizeMode: 'cover',
         objectFit: 'contain',
-        marginTop: -12,
-        marginRight: 40,
     },
     smallerImage: {
         width: 30,
@@ -179,8 +180,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        color: 'black',
+        color: COLORS.text,
         marginRight: 35,
+        marginBottom: 5,
     },
 });
 
