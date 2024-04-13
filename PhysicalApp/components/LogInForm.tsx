@@ -156,7 +156,7 @@ const LogInForm = () => {
             width: "100%",
           }}
         >
-          <Link href={validated ? "/home(tabs)/Profile" : "/(tabs)"}>
+          <Link href={validated ? "/home(tabs)/Profile" : "/(tabs)"} asChild>
             <LogInBtn
               content="Log In"
               handlePress={(event: GestureResponderEvent) => validate(event)}
@@ -175,7 +175,7 @@ const LogInForm = () => {
             width: "100%",
           }}
         >
-          <Link href="/(tabs)/register">
+          <Link href="/(tabs)/register" asChild>
             <LogInBtn
               content="Create new account"
               handlePress={() => {}}
