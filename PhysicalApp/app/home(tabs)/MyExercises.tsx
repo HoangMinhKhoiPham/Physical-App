@@ -63,5 +63,6 @@ const styles = StyleSheet.create({
         borderRadius: 22,
         marginBottom: 5,
         flexDirection: 'row',
+        fontFamily: FONT.regular,
     }
 })

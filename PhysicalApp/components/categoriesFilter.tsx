@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { SIZES } from '@/constants';
+import {FONT, SIZES} from '@/constants';
 
 const CategoriesFilter = () => {
     const [selectedFilter, setSelectedFilter] = useState('Featured');
@@ -35,7 +35,7 @@ const CategoriesFilter = () => {
                             },
                         ]}
                     >
-                        <Text style={{ color: selectedFilter === filter ? '#FFFFFF' : '#4D506F', fontSize: SIZES.medium }}>{filter}</Text>
+                        <Text style={{ color: selectedFilter === filter ? '#FFFFFF' : '#4D506F', fontSize: SIZES.medium, fontFamily: FONT.regular, }}>{filter}</Text>
                     </TouchableOpacity>
                 ))}
             </ScrollView>
