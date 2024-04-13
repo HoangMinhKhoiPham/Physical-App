@@ -47,6 +47,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         gap: 5,
+        shadowColor: 'black',
+        shadowRadius: 12,
+        shadowOpacity: 1,
+        elevation: 5,
+        shadowOffset:
+            {
+                width: 0,
+                height: 4
+            }
     },
     containerButPoor: {
         width: '100%',
@@ -59,6 +68,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         gap: 5,
+        shadowColor: 'black',
+        shadowRadius: 12,
+        shadowOpacity: 1,
+        elevation: 5,
+        shadowOffset:
+            {
+                width: 0,
+                height: 4
+            }
     },
     poorNameContainer: {
         maxWidth: '70%',
@@ -70,10 +88,12 @@ const styles = StyleSheet.create({
         fontFamily: FONT.regular,
         fontSize: SIZES.large,
         maxWidth: '70%',
+        color: COLORS.text,
     },
     nameButPoor: {
         fontFamily: FONT.regular,
         fontSize: SIZES.large,
+        color: '#7E7E7E',
     },
     pointsButPoor: {
         fontFamily: FONT.regular,

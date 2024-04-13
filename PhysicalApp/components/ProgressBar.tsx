@@ -33,22 +33,22 @@ const styles = StyleSheet.create({
     labelText: {
         fontSize: 16,
         fontFamily: FONT.bold,
-        color: COLORS.primary, // Adjust color based on your theme
+        color: COLORS.primary,
     },
     progressText: {
         fontSize: SIZES.medium,
         fontFamily: FONT.bold,
-        color: COLORS.tertiary, // Adjust color based on your theme
+        color: COLORS.primary,
     },
     progressBar: {
         width: 150,
         height: 7,
-        backgroundColor: '#B7B7B7', // Adjust color based on your theme
+        backgroundColor: '#B0B0B0',
         borderRadius: 3,
     },
     progressIndicator: {
         height: '100%',
-        backgroundColor: COLORS.tertiary, // Adjust color based on your theme
+        backgroundColor: COLORS.primary,
         borderRadius: 3,
     },
 });

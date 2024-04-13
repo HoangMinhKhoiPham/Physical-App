@@ -68,7 +68,7 @@ export default function Profile() {
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.goalContainer}>
-                        <Text style={{ color: '#4D506F', fontFamily: FONT.regular}}>Get Strong</Text>
+                        <Text style={{ color: '#4D506F', fontFamily: FONT.regular}}>Get Stronger</Text>
                     </View>
                     <TouchableOpacity style={styles.addButton}>
                         <FontAwesome name="plus" size={15} color="#FFFFFF"/>

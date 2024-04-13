@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import {FONT} from "@/constants";
 import {COLORS} from "@/constants";
 
-class ProgressBar extends React.Component<{ value: any }> {
+class PointBar extends React.Component<{ value: any }> {
     render() {
         let {value} = this.props;
         // Calculate the position of the pointer based on the current value
@@ -42,6 +42,15 @@ const styles = StyleSheet.create({
         borderRadius: 22,
         paddingHorizontal: 10,
         color: COLORS.primary,
+        shadowColor: 'black',
+        shadowRadius: 12,
+        shadowOpacity: 1,
+        elevation: 5,
+        shadowOffset:
+            {
+                width: 0,
+                height: 4
+            }
     },
     pointer: {
         height: '60%',
@@ -68,14 +77,14 @@ const styles = StyleSheet.create({
         position: 'relative',
     },
     minText: {
-        fontFamily: FONT.regular,
+        fontFamily: FONT.bold,
         fontSize: 12,
         color: COLORS.primary,
         maxWidth: 40,
         textAlign: 'center',
     },
     maxText: {
-        fontFamily: FONT.regular,
+        fontFamily: FONT.bold,
         fontSize: 12,
         color: COLORS.primary,
         maxWidth: 40,
@@ -97,4 +106,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ProgressBar;
+export default PointBar;

@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
-        gap: 5,
+        gap: 8,
     }
 });

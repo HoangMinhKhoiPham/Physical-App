@@ -3,7 +3,9 @@ import LogInForm from "@/components/LogInForm";
 import {COLORS, FONT, SIZES} from "../../constants";
 import {FontAwesome} from "@expo/vector-icons";
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
-import ProgressBar from "@/components/PointBar";
+import ProgressBar from "@/components/ProgressBar";
+import PointBar from "@/components/PointBar";
+import RecentActivity from "@/components/RecentActivity";
 
 export default function Home() {
     return (
@@ -21,7 +23,7 @@ export default function Home() {
             >
                 <View>
                     <Text style={styles.user}>
-                        Hi, Thomassimoalala!
+                        Hi, Tom!
                     </Text>
                 </View>
                 <View style={styles.container}>
@@ -87,10 +89,13 @@ export default function Home() {
             >
                 <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10, marginLeft: 15}}>My Points</Text>
                 <View style={styles.pointsContainer}>
-                    <ProgressBar value={8000} />
+                    <PointBar value={8000} />
                 </View>
 
                 <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginTop: 20, marginBottom: 10, marginLeft: 15}}>Most Recent Activity</Text>
+                <View style={styles.recentContainer}>
+                    <RecentActivity/>
+                </View>
 
                 <View style={{ flex: 1, position: 'absolute', marginTop: 295, flexDirection: 'column', alignItems: 'flex-start', marginLeft: 15}}>
                     <Text style={{ fontSize: SIZES.large, fontFamily: FONT.regular, marginBottom: 10 }}>My Metrics</Text>
@@ -225,6 +230,10 @@ const styles = StyleSheet.create({
     pointsContainer: {
         marginTop: 8,
         paddingHorizontal: 20,
+    },
+    recentContainer: {
+        marginTop: 8,
+        paddingHorizontal: 6,
     },
     sectionTitle: {
         fontSize: SIZES.large,

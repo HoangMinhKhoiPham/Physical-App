@@ -132,6 +132,7 @@ const styles = StyleSheet.create({
     },
     levelText: {
         color: 'white',
+        fontFamily: FONT.regular,
     },
     bottomRow: {
         flexDirection: 'row',
@@ -151,7 +152,8 @@ const styles = StyleSheet.create({
     },
     exerciseTitle: {
         fontFamily: FONT.bold,
-        fontSize: SIZES.medium,
+        fontSize: SIZES.large,
+        color: COLORS.text,
     },
     addListButton: {
         width: 40,

@@ -46,7 +46,7 @@ export default function Forum() {
                 }}
             >
                 <Text style={{ color: '#FFFFFF', marginTop: 5, textAlign: "left",
-                    fontSize: SIZES.xLarge}}>
+                    fontSize: SIZES.xLarge, fontFamily: FONT.regular,}}>
                     New post</Text>
                 <FontAwesome name="plus" size={50} color="#FFFFFF" style={{ marginLeft: 10, marginTop: 5 }} />
             </TouchableOpacity>
