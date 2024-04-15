@@ -33,8 +33,8 @@ export const exercisesTom: Exercises[] = [
     nbExercises: 10,
     nbPoints: 200,
     duration: 45,
-    text: "Start",
-    progress: 0,
+    text: "Continue",
+    progress: 10,
   },
   {
     title: "Home Workout",
