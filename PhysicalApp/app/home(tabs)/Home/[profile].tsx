@@ -1,5 +1,5 @@
 import { Text, View } from "@/components/Themed";
-import { COLORS, FONT, SIZES } from "../../../constants";
+import { COLORS, FONT, SIZES } from "@/constants";
 import { FontAwesome } from "@expo/vector-icons";
 import { Image, StyleSheet } from "react-native";
 import PointBar from "@/components/PointBar";
