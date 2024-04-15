@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   GestureResponderEvent,
   NativeSyntheticEvent,
@@ -22,8 +22,27 @@ export interface userData {
 const LogInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [validated, setValidated] = useState<boolean>(false);
 
   const validate = async () => {
+    if (
+      (email == "tom@gmail.com" ||
+        email == "dwayne@gmail.com" ||
+        email == "jeff@gmail.com") &&
+      password == "123123"
+    ) {
+      setValidated(true);
+    } else {
+      const token = await AsyncStorage.getItem("userData");
+      if (token) {
+        const userData: userData = JSON.parse(token);
+        if (email === userData.email && password === userData.password) {
+          setValidated(true);
+        } else {
+          setValidated(false);
+        }
+      }
+    }
     await AsyncStorage.setItem("email", email);
   };
   return (
@@ -149,6 +168,7 @@ const LogInForm = () => {
             handlePress={validate}
             isPrimary={true}
             email={email}
+            validated={validated}
           />
         </View>
         <View
@@ -167,6 +187,7 @@ const LogInForm = () => {
             handlePress={() => {}}
             isPrimary={false}
             email=""
+            validated={true}
           />
         </View>
       </View>
