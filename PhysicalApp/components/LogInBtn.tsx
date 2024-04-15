@@ -5,27 +5,38 @@ import {
   StyleSheet,
   GestureResponderEvent,
 } from "react-native";
-import { COLORS, FONT, SIZES } from "../constants";
-import { white } from "colorette";
+import { COLORS, SIZES } from "../constants";
+import { Link } from "expo-router";
 
 export type BtnProps = {
   content: string;
   handlePress: (event: GestureResponderEvent) => void;
   isPrimary: boolean;
+  email: string;
 };
 
-const LogInBtn: React.FC<BtnProps> = ({ content, handlePress, isPrimary }) => {
+const LogInBtn: React.FC<BtnProps> = ({
+  content,
+  handlePress,
+  isPrimary,
+  email,
+}) => {
   return (
-    <TouchableOpacity onPress={handlePress} style={styles(isPrimary).btn}>
-      <Text
-        style={{
-          color: isPrimary ? "white" : COLORS.text,
-          fontSize: SIZES.medium,
-        }}
-      >
-        {content}
-      </Text>
-    </TouchableOpacity>
+    <Link
+      href={email ? `/home(tabs)/Profile/${email}` : "/(tabs)/register"}
+      asChild
+    >
+      <TouchableOpacity onPress={handlePress} style={styles(isPrimary).btn}>
+        <Text
+          style={{
+            color: isPrimary ? "white" : COLORS.text,
+            fontSize: SIZES.medium,
+          }}
+        >
+          {content}
+        </Text>
+      </TouchableOpacity>
+    </Link>
   );
 };
 
