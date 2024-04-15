@@ -1,20 +1,23 @@
 import { Text, View } from "@/components/Themed";
-import LogInForm from "@/components/LogInForm";
 import { COLORS, FONT, SIZES } from "../../../constants";
 import { FontAwesome } from "@expo/vector-icons";
-import { Image, StyleSheet, TouchableOpacity } from "react-native";
-import ProgressBar from "@/components/ProgressBar";
+import { Image, StyleSheet } from "react-native";
 import PointBar from "@/components/PointBar";
 import RecentActivity from "@/components/RecentActivity";
 import React from "react";
 import { useLocalSearchParams } from "expo-router";
-import { UserInformation, userProfiles } from "@/constants/UserProfiles";
+import {
+  Exercises,
+  UserInformation,
+  userProfiles,
+} from "@/constants/UserProfiles";
 
 export default function Home() {
   const { profile } = useLocalSearchParams();
   const persona: UserInformation | undefined = userProfiles.find(
     (i) => i.email == profile
   );
+  const exercises: Exercises[] | undefined = persona?.exercises;
   return (
     <View
       style={{
@@ -101,7 +104,7 @@ export default function Home() {
           My Points
         </Text>
         <View style={styles.pointsContainer}>
-          <PointBar value={8000} />
+          <PointBar value={persona?.points ? persona.points : 8000} />
         </View>
 
         <Text
@@ -115,7 +118,7 @@ export default function Home() {
           Most Recent Activity
         </Text>
         <View style={styles.recentContainer}>
-          <RecentActivity />
+          <RecentActivity exercise={exercises ? exercises[0] : undefined} />
         </View>
 
         <Text
