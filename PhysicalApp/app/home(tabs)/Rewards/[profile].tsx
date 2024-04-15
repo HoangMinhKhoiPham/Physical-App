@@ -3,9 +3,15 @@ import {FONT, SIZES} from "@/constants";
 import Reward from "@/components/Reward";
 import {StyleSheet} from "react-native";
 import ProgressBar from "@/components/PointBar";
+import {useLocalSearchParams} from "expo-router";
+import {UserInformation, userProfiles} from "@/constants/UserProfiles";
 
 export default function Rewards() {
-    const currentBalance = 8000;
+    const {profile} = useLocalSearchParams();
+    const persona: UserInformation | undefined = userProfiles.find(
+        (i) => i.email == profile
+    );
+    const currentBalance = persona?.points ? persona.points : 8000;
     return (
         <View
             style={{

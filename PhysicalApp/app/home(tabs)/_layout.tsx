@@ -80,10 +80,16 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="Rewards"
+        name="Rewards/[profile]"
         options={{
           title: "Rewards",
           tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
+            href: {
+                pathname: `Rewards/[profile]`,
+                params: {
+                    profile: `${email}`,
+                },
+            }
         }}
       />
 

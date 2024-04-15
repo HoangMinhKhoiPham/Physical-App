@@ -123,6 +123,7 @@ const LogInForm = () => {
             ) => {
               setPassword(password.nativeEvent.text);
             }}
+            secureTextEntry={true}
             style={styles.userInput}
           />
         </View>

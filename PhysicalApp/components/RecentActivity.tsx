@@ -35,17 +35,12 @@ const RecentActivity = (props: RecentActivityProps) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
-    gap: -50,
-  },
-  topRow: {
-    width: 380,
-    height: 85,
     backgroundColor: COLORS.secondary,
     borderRadius: 22,
-    paddingHorizontal: 15,
+    width: 380,
     paddingVertical: 8,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    paddingHorizontal: 15,
+    gap: 4,
     shadowColor: "black",
     shadowRadius: 12,
     shadowOpacity: 1,
@@ -55,15 +50,18 @@ const styles = StyleSheet.create({
       height: 4,
     },
   },
+  topRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
   bottomRow: {
     width: "40%",
-    paddingVertical: 8,
-    paddingHorizontal: 15,
   },
   exerciseTitle: {
     fontFamily: FONT.bold,
     fontSize: SIZES.large,
     color: COLORS.text,
+    maxWidth: 230,
   },
   level: {
     width: 115,
