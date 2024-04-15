@@ -42,10 +42,16 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="Home"
+        name="Home/[profile]"
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          href: {
+            pathname: `Home/[profile]`,
+            params: {
+              profile: `${email}`,
+            },
+          },
         }}
       ></Tabs.Screen>
 
