@@ -10,6 +10,7 @@ import * as SplashScreen from "expo-splash-screen";
 import React, { useContext, useEffect } from "react";
 import { useColorScheme } from "@/components/useColorScheme";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { UserInformation, userProfiles } from "@/constants/UserProfiles";
 export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary,
@@ -39,6 +40,7 @@ export default function RootLayout() {
   // Wait for fonts to load before showing the home page
   useEffect(() => {
     if (loaded) {
+      loadUserProfiles();
       SplashScreen.hideAsync();
     }
   }, [loaded]);
@@ -49,6 +51,15 @@ export default function RootLayout() {
 
   return <RootLayoutNav />;
 }
+
+const loadUserProfiles = async () => {
+  try {
+    const personas = userProfiles;
+    await AsyncStorage.setItem("personas", JSON.stringify(personas));
+  } catch (error) {
+    console.error("Error storing data:", error);
+  }
+};
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();

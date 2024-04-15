@@ -10,7 +10,6 @@ import { View } from "@/components/Themed";
 import LogInBtn from "./LogInBtn";
 import { COLORS, FONT, SIZES } from "@/constants";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Link } from "expo-router";
 
 export interface userData {
   email: string;
@@ -23,21 +22,10 @@ export interface userData {
 const LogInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [validated, setValidated] = useState<boolean>(false);
 
-  const validate = async (event: GestureResponderEvent) => {
-    const token = await AsyncStorage.getItem("userData");
-
-    if (token) {
-      const userData: userData = JSON.parse(token);
-      if (userData.email === email && userData.password == password) {
-        setValidated(true);
-      }
-    } else {
-      setValidated(false);
-    }
+  const validate = async () => {
+    await AsyncStorage.setItem("email", email);
   };
-  console.log(validated);
   return (
     // Container -> Wrapper -> Input
     <View>
@@ -156,13 +144,12 @@ const LogInForm = () => {
             width: "100%",
           }}
         >
-          <Link href={validated ? "/home(tabs)/Profile" : "/(tabs)"} asChild>
-            <LogInBtn
-              content="Log In"
-              handlePress={(event: GestureResponderEvent) => validate(event)}
-              isPrimary={true}
-            />
-          </Link>
+          <LogInBtn
+            content="Log In"
+            handlePress={validate}
+            isPrimary={true}
+            email={email}
+          />
         </View>
         <View
           style={{
@@ -175,13 +162,12 @@ const LogInForm = () => {
             width: "100%",
           }}
         >
-          <Link href="/(tabs)/register" asChild>
-            <LogInBtn
-              content="Create new account"
-              handlePress={() => {}}
-              isPrimary={false}
-            />
-          </Link>
+          <LogInBtn
+            content="Create new account"
+            handlePress={() => {}}
+            isPrimary={false}
+            email=""
+          />
         </View>
       </View>
 
