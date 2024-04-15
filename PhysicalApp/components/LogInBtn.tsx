@@ -13,6 +13,7 @@ export type BtnProps = {
   handlePress: (event: GestureResponderEvent) => void;
   isPrimary: boolean;
   email: string;
+  validated: boolean;
 };
 
 const LogInBtn: React.FC<BtnProps> = ({
@@ -20,10 +21,17 @@ const LogInBtn: React.FC<BtnProps> = ({
   handlePress,
   isPrimary,
   email,
+  validated,
 }) => {
   return (
     <Link
-      href={email ? `/home(tabs)/Profile/${email}` : "/(tabs)/register"}
+      href={
+        validated
+          ? email
+            ? `/home(tabs)/Home/${email}`
+            : "/(tabs)/register"
+          : "/(tabs)"
+      }
       asChild
     >
       <TouchableOpacity onPress={handlePress} style={styles(isPrimary).btn}>
