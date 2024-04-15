@@ -16,7 +16,6 @@ export default function MyExercises() {
     (i) => i.email == profile
   );
   const exercises: Exercises[] | undefined = persona?.exercises;
-  console.log(exercises);
   return (
     <View
       style={{
