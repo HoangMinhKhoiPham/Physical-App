@@ -2,15 +2,24 @@ import { Text, View } from "@/components/Themed";
 import { COLORS, FONT, SIZES } from "@/constants";
 import { Image, TouchableOpacity, StyleSheet } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import { useLocalSearchParams } from "expo-router";
 import { UserInformation, userProfiles } from "@/constants/UserProfiles";
+import LogOutBtn from "@/components/LogOutBtn";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Profile() {
   const { profile } = useLocalSearchParams();
+
   const persona: UserInformation | undefined = userProfiles.find(
     (i) => i.email == profile
   );
+    const [validated, setValidated] = useState<boolean>(true);
+
+    const validate = async () => {
+            setValidated(false);
+            await AsyncStorage.clear();
+    };
 
   return (
     <View
@@ -27,10 +36,14 @@ export default function Profile() {
           paddingBottom: 30,
         }}
       >
-        <View>
-          <Text style={{ fontSize: SIZES.xxxLarge, fontFamily: FONT.regular }}>
+        <View style={{
+            flexDirection: "row",
+            alignItems: "center",
+            }}>
+          <Text style={{ fontSize: SIZES.xxxLarge, fontFamily: FONT.regular , marginLeft: 135, marginRight: 30}}>
             Profile
           </Text>
+            <LogOutBtn content={"Log Out"} handlePress={validate} isPrimary={true} validated={validated}/>
         </View>
         <Image
           source={
