@@ -5,8 +5,9 @@ import {
   StyleSheet,
   GestureResponderEvent,
 } from "react-native";
-import { COLORS, SIZES } from "../constants";
+import {COLORS, FONT, SIZES} from "../constants";
 import { Link } from "expo-router";
+import {fontFamily} from "nativewind/dist/postcss/to-react-native/properties/font-family";
 
 export type BtnProps = {
   content: string;
@@ -38,6 +39,7 @@ const LogInBtn: React.FC<BtnProps> = ({
         <Text
           style={{
             color: isPrimary ? "white" : COLORS.text,
+            fontFamily: FONT.regular,
             fontSize: SIZES.medium,
           }}
         >
