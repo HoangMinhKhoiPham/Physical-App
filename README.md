@@ -16,3 +16,6 @@ In 2022, around 35 percent of adults in Canada are overweight or obese. Due to t
 A lack of physical activity increases your risk for many diseases, such as osteoporosis, heart disease, obesity, and elevated levels of blood pressure and cholesterol. Unfortunately, this problem is escalating worldwide: a staggering proportion exceeding 80% of the adolescent demographic fails to meet the global recommended levels of physical activity. Furthermore, insufficiently active people have a 20%-30% higher risk of death.
 
 To address this problem, we propose the development of a fitness app with a robust reward system. The app will leverage gamification techniques and behavioural psychology principles to motivate users to adopt and maintain a healthier lifestyle. It will suggest exercises and remind you to work out, customizable for beginners and active people.
+
+## Final Report on Medium:
+- [https://medium.com/@soen357groupproject/final-report-ff04197b74d9]
