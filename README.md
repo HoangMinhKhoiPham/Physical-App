@@ -20,20 +20,24 @@ In 2022, around 35 percent of adults in Canada are overweight or obese. Due to t
 A lack of physical activity increases your risk for many diseases, such as osteoporosis, heart disease, obesity, and elevated levels of blood pressure and cholesterol. Unfortunately, this problem is escalating worldwide: a staggering proportion exceeding 80% of the adolescent demographic fails to meet the global recommended levels of physical activity. Furthermore, insufficiently active people have a 20%-30% higher risk of death.
 
 To address this problem, we propose the development of a fitness app with a robust reward system. The app will leverage gamification techniques and behavioural psychology principles to motivate users to adopt and maintain a healthier lifestyle. It will suggest exercises and remind you to work out, customizable for beginners and active people.
+
 <br/>
 
 ## Getting Started
 1. `cd PhysicalApp`
+2. `npm i`
 
 Then you have the following options:
 * `npm run ios` requires XCODE
 * `npm run android` requires a running Android emulator from AndroidStudio
 * `npm run web` should work out of the box
+<br/>
 
-## Links:
+## Links
 - [Figma](https://www.figma.com/file/MYg6cCIK6Qhm06d2fG7iHd/Smile-%26-Sweat?type=design&node-id=0%3A1&mode=design&t=c7V6JaX5YxhFkt3H-1)
 - [Medium hosted webpage](https://medium.com/@soen357groupproject/final-report-ff04197b74d9)
 - [Demo video](https://youtu.be/3kyjPd_Mavc)
+<br/>
 
 ## Credentials to try out
 1. dwayne@gmail.com
