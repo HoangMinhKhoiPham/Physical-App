@@ -19,3 +19,11 @@ To address this problem, we propose the development of a fitness app with a robu
 
 ## Final Report on Medium:
 - [https://medium.com/@soen357groupproject/final-report-ff04197b74d9]
+
+## Credentials to try out
+1. dwayne@gmail.com
+2. tom@gmail.com
+3. jeff@gmail.com
+
+Password: 123123
+
